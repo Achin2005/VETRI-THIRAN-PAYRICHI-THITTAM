@@ -1,0 +1,10 @@
+{% extends "base.html" %}{% block body %}
+<h2>🕘 Your past plans</h2>
+{% for h in items %}
+<div class="card"><details><summary>{{ h.type|capitalize }} plan · ₹{{ h.input.total_budget }} · {{ h.time }}</summary><div id="h{{ h.id }}"></div></details></div>
+{% else %}<div class="card">Nothing here yet. <a href="/dashboard">Create your first plan</a>.</div>{% endfor %}
+{% endblock %}
+{% block js %}<script>
+const H = {{ items|tojson }};
+H.forEach(h => renderPlan(h.result, document.getElementById("h" + h.id)));
+</script>{% endblock %}

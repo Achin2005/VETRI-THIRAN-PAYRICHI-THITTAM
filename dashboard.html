@@ -1,0 +1,11 @@
+{% extends "base.html" %}{% block body %}
+<h2>Hi {{ user }}! What shall we plan today?</h2>
+<div class="grid">
+<a class="tile" href="/planner/home"><span class="ico">🏠</span><h3>Home planner</h3><p>Furnish and light up your space</p></a>
+<a class="tile" href="/planner/party"><span class="ico">🎉</span><h3>Party planner</h3><p>Plan an event that fits your budget</p></a>
+<a class="tile" href="/planner/jewelry"><span class="ico">💎</span><h3>Jewelry planner</h3><p>Match jewelry to your outfit</p></a>
+</div>
+<h2>Recent plans</h2>
+{% for h in recent %}<div class="card hist"><span><b>{{ h.type|capitalize }} plan</b> · ₹{{ h.input.total_budget }}</span><small>{{ h.time }}</small></div>
+{% else %}<div class="card">No plans yet. Pick a planner above to create your first one.</div>{% endfor %}
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends "base.html" %}{% block body %}
+<section class="hero"><span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span>
+<h1>Your budget, planned in seconds</h1>
+<p>Tell PocketSmart what you have to spend. Get a ready plan for your home, your party or your jewelry, with shopping links.</p>
+<a class="btn" href="{{ '/dashboard' if user else '/register' }}">Start planning</a></section>
+<div class="grid">
+<div class="tile"><span class="ico">🏠</span><h3>Home interiors</h3><p>Lights, fans and furniture that fit your money.</p></div>
+<div class="tile"><span class="ico">🎉</span><h3>Party planning</h3><p>Food, decor and fun split across your budget.</p></div>
+<div class="tile"><span class="ico">💎</span><h3>Jewelry match</h3><p>Upload your outfit and get matching pieces.</p></div>
+</div>{% endblock %}

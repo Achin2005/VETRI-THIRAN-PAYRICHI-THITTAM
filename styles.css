@@ -1,0 +1,50 @@
+:root{--cream:#FFFBEA;--y1:#FFF3B0;--y2:#FFE066;--y3:#FFC933;--y4:#FF9F1C;--brown:#4A3200;--coral:#FF6B6B;--teal:#2EC4B6;--violet:#7C5CFF;--white:#fff}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Trebuchet MS","Segoe UI",sans-serif;background:var(--cream);color:var(--brown);line-height:1.5;min-height:100vh;display:flex;flex-direction:column}
+main{flex:1;width:100%;max-width:1000px;margin:0 auto;padding:24px 16px 48px}
+nav{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;align-items:center;padding:12px 24px;background:var(--y3);border-bottom:4px solid var(--y4)}
+nav div{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+nav a{color:var(--brown);text-decoration:none;font-weight:700;padding:6px 12px;border-radius:20px}
+nav a:hover{background:var(--y1)}
+.logo{font-size:1.4rem}
+.btn{display:inline-block;background:var(--brown);color:var(--y2)!important;padding:12px 26px;border-radius:30px;font-weight:700;border:0;cursor:pointer;font-size:1rem;text-decoration:none;transition:transform .15s}
+.btn:hover{transform:translateY(-2px);background:var(--brown)!important}
+.btn.sm{padding:6px 16px}
+.hero{position:relative;overflow:hidden;text-align:center;padding:56px 20px;background:linear-gradient(135deg,var(--y2),var(--y4));border-radius:32px;margin-bottom:28px}
+.hero h1{font-size:clamp(2rem,6vw,3.2rem);margin:0 0 8px}
+.hero p{max-width:560px;margin:0 auto 22px;font-size:1.1rem}
+.blob{position:absolute;border-radius:50%;opacity:.5}
+.b1{width:180px;height:180px;background:var(--y1);top:-60px;left:-50px}
+.b2{width:140px;height:140px;background:var(--coral);bottom:-50px;right:8%;opacity:.35}
+.b3{width:90px;height:90px;background:var(--teal);top:30px;right:-25px;opacity:.35}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.tile{background:var(--white);border-radius:24px;padding:24px;text-align:center;border-bottom:8px solid var(--y3);text-decoration:none;color:var(--brown);box-shadow:0 6px 0 rgba(255,159,28,.25);transition:transform .15s}
+.tile:hover{transform:translateY(-4px)}
+.tile .ico{font-size:3rem;display:block}
+.tile:nth-child(2){border-color:var(--coral)}.tile:nth-child(3){border-color:var(--teal)}
+h2{margin:8px 0 16px}
+.card{background:var(--white);border-radius:20px;padding:20px;margin:16px 0;border-left:10px solid var(--y3);box-shadow:0 4px 12px rgba(74,50,0,.08)}
+.c1{border-color:var(--coral)}.c2{border-color:var(--teal)}.c3{border-color:var(--violet)}
+.err{border-color:var(--coral);background:#FFF0F0}
+.tips{background:var(--y1)}
+form.card label{display:block;font-weight:700;margin:14px 0 4px}
+input,select,textarea{width:100%;padding:11px 14px;border:2px solid var(--y2);border-radius:14px;font-size:1rem;background:var(--cream);color:var(--brown)}
+input:focus,select:focus,textarea:focus{outline:3px solid var(--y4);border-color:var(--y4)}
+.row{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}
+.checks{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.checks label{display:flex!important;align-items:center;gap:6px;margin:0!important;background:var(--y1);padding:8px 14px;border-radius:20px;cursor:pointer}
+.checks input{width:auto}
+.summary{display:flex;gap:14px;flex-wrap:wrap}
+.summary div{flex:1;min-width:160px;background:var(--y2);border-radius:20px;padding:16px;text-align:center}
+.summary small{display:block}.summary b{font-size:1.7rem}
+.pill{background:var(--y2);padding:2px 12px;border-radius:20px;font-size:.9rem;margin-left:8px}
+.item{display:flex;justify-content:space-between;gap:14px;padding:12px 0;border-top:2px dashed var(--y2)}
+.item p{margin:2px 0 8px}
+.price{font-weight:700;font-size:1.15rem;white-space:nowrap}
+.links a{display:inline-block;margin:0 6px 6px 0;padding:4px 12px;border-radius:14px;background:var(--brown);color:var(--y2);text-decoration:none;font-size:.85rem;text-transform:capitalize}
+.links a:hover{background:var(--coral);color:#fff}
+.auth{max-width:420px;margin:20px auto}
+.hist{display:flex;justify-content:space-between;align-items:center;gap:10px}
+details summary{cursor:pointer;font-weight:700}
+footer{text-align:center;padding:16px;background:var(--y3);font-size:.9rem}
+@media(max-width:600px){.item{flex-direction:column}}

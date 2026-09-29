@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PocketSmart AI</title><link rel="stylesheet" href="/static/styles.css"></head>
+<body>
+<nav><a class="logo" href="/">👛 PocketSmart</a>
+<div>{% if user %}
+<a href="/dashboard">Dashboard</a><a href="/planner/home">🏠 Home</a><a href="/planner/party">🎉 Party</a>
+<a href="/planner/jewelry">💎 Jewelry</a><a href="/history">🕘 History</a><a class="btn sm" href="/logout">Log out</a>
+{% else %}<a href="/login">Sign in</a><a class="btn sm" href="/register">Get started</a>{% endif %}</div></nav>
+<main>{% block body %}{% endblock %}</main>
+<footer>© 2026 PocketSmart AI · Plan smart, spend happy</footer>
+<script src="/static/app.js"></script>{% block js %}{% endblock %}
+</body></html>

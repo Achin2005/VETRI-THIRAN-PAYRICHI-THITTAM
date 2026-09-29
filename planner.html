@@ -1,0 +1,38 @@
+{% extends "base.html" %}{% block body %}
+{% set titles = {"home": "🏠 Home interior planner", "party": "🎉 Party planner", "jewelry": "💎 Jewelry planner"} %}
+<h2>{{ titles[kind] }}</h2>
+<form class="card" id="plan-form" data-action="/generate-{{ kind }}">
+<label>Total budget (₹)</label><input type="number" name="total_budget" min="100" value="50000" required>
+
+{% if kind == "home" %}
+<div class="row">
+<div><label>Lights</label><input type="number" name="lights" min="0" value="5"></div>
+<div><label>Ceiling fans</label><input type="number" name="fans" min="0" value="2"></div>
+<div><label>Furniture pieces</label><input type="number" name="furniture" min="0" value="3"></div>
+<div><label>Dining tables</label><input type="number" name="tables" min="0" value="1"></div></div>
+<label>Rooms</label><div class="checks">
+<label><input type="checkbox" name="rooms" value="Living Room" checked> 🛋️ Living room</label>
+<label><input type="checkbox" name="rooms" value="Kitchen"> 🍳 Kitchen</label>
+<label><input type="checkbox" name="rooms" value="Bedroom"> 🛏️ Bedroom</label></div>
+<label>Special wishes</label><textarea name="notes" rows="2" placeholder="e.g. modern, wooden, energy saving"></textarea>
+
+{% elif kind == "party" %}
+<div class="row">
+<div><label>Guests</label><input type="number" name="guests" min="1" value="20" required></div>
+<div><label>Party type</label><select name="party_type"><option>Birthday</option><option>Wedding</option><option>Corporate</option><option>Get-together</option></select></div>
+<div><label>Venue</label><select name="venue"><option>Home</option><option>Banquet hall</option><option>Restaurant</option><option>Outdoor</option></select></div></div>
+<label>What do you need?</label><div class="checks">
+<label><input type="checkbox" name="needs" value="Catering" checked> 🍽️ Catering</label>
+<label><input type="checkbox" name="needs" value="Decoration" checked> 🎈 Decoration</label>
+<label><input type="checkbox" name="needs" value="Entertainment" checked> 🎵 Entertainment</label></div>
+<label>Special wishes</label><textarea name="notes" rows="2" placeholder="theme, vegetarian food, etc."></textarea>
+
+{% else %}
+<div class="row">
+<div><label>Occasion</label><select name="occasion"><option>Wedding</option><option>Birthday</option><option>Festival</option><option>Office</option><option>Casual outing</option></select></div></div>
+<label>Style preferences</label><textarea name="preferences" rows="2" placeholder="gold, minimal, traditional…"></textarea>
+<label>Outfit photo (optional) 👗</label><input type="file" name="image" accept="image/*">
+{% endif %}
+<p><button class="btn">✨ Make my plan</button></p>
+</form>
+<div id="result"></div>{% endblock %}

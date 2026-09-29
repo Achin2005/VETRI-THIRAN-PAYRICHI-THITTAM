@@ -1,0 +1,11 @@
+{% extends "base.html" %}{% block body %}
+<form class="card auth" method="post">
+<h2>{{ "Create your account" if mode == "register" else "Welcome back 👋" }}</h2>
+{% if error %}<p class="err card">{{ error }}</p>{% endif %}
+<label>Username</label><input name="username" required>
+{% if mode == "register" %}<label>Email</label><input type="email" name="email" required>{% endif %}
+<label>Password</label><input type="password" name="password" required>
+{% if mode == "register" %}<label>Confirm password</label><input type="password" name="confirm" required>{% endif %}
+<p><button class="btn">{{ "Create account" if mode == "register" else "Sign in" }}</button></p>
+<p>{% if mode == "register" %}Already registered? <a href="/login">Sign in</a>{% else %}New here? <a href="/register">Create an account</a>{% endif %}</p>
+</form>{% endblock %}
